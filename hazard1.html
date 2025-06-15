@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Predicted Fate</title>
+  <link rel="stylesheet" href="hazard1.css"  />
+</head>
+<body>
+  <div class="container">
+    <h1>Your Predicted Fate</h1>
+    <div id="result" class="result-box"></div>
+
+    <button onclick="history.back()">🔙 Try Again</button>
+
+  <div class="advice-box" id="advice"></div>
+
+  </div>
+
+
+  <script>
+    const score = parseInt(localStorage.getItem("hazardScore")) || 0;
+let result = "";
+let advice = "";
+
+if (score >= 85) {
+  result = "🔴 You're already dead. She’s just waiting for the long weekend. From mountain trips to mushroom soups, every ‘romantic gesture’ is a potential episode of 'Crime Patrol'.";
+  advice = "💡 Survival Tip: Fake your death. New name, new city, no forwarding address.";
+} else if (score >= 70) {
+  result = "🔴 One push away from becoming a 'mystery in the valley'. That surprise trek wasn’t for selfies. If she offers to take the lead on a cliff… say your last words.";
+  advice = "💡 Survival Tip: Avoid treks. Avoid balconies. Avoid trusting gravity — or her.";
+} else if (score >= 55) {
+  result = "🔴 Slow poisoning in progress. Digestive enzymes won’t save you. Your protein shakes taste off? That’s not whey. That’s why.";
+  advice = "💡 Survival Tip: Cook your meals. Taste test hers. Trust your gut — literally.";
+} else if (score >= 40) {
+  result = "🟠 She’s not killing you. She’s erasing you. Joint accounts: gone. Social ties: severed. Reality: rewritten. It’s giving... premeditated.";
+  advice = "💡 Survival Tip: Lawyer up. Document everything. She’s playing chess, not ludo.";
+} else {
+  result = "✅ You're safe. For now. But maybe don't ignore the newspaper clippings. She hasn’t made a move… yet. But that doesn’t mean she’s not drafting the script.";
+  advice = "💡 Survival Tip: Stay cautious. Don’t get too comfortable. Keep the lights on.";
+}
+
+document.getElementById("result").textContent = result;
+
+document.getElementById("advice").textContent = advice;
+
+  </script>
+</body>
+</html>

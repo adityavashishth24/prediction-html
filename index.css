@@ -1,0 +1,129 @@
+html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      background: url('https://i.imgur.com/yYX0FPH.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Special Elite', monospace;
+      color: white;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    body{
+      background-color: black;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: url('https://i.imgur.com/dcM6pKo.gif');
+      opacity: 0.05;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.85);
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .content {
+      max-width: 800px;
+      padding: 3rem;
+      border: 5px dashed yellow;
+      background-color: rgba(0, 0, 0, 0.85);
+      box-shadow: 0 0 20px red;
+      border-radius: 10px;
+      z-index: 3;
+    }
+
+    h1 {
+      font-family: 'Creepster', cursive;
+      font-size: 4rem;
+      color: crimson;
+      text-shadow: 2px 2px black;
+      margin-bottom: 1rem;
+    }
+
+    h1:hover {
+      animation: pulse 1s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    p {
+      font-size: 1.25rem;
+      line-height: 1.8;
+      margin-top: 1rem;
+      font-family: 'Special Elite', monospace;
+    }
+
+    .start-btn {
+      margin-top: 2.5rem;
+      padding: 1rem 2.5rem;
+      font-size: 1.4rem;
+      font-weight: bold;
+      background: crimson;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 0 15px red;
+      transition: background 0.3s, transform 0.2s;
+      z-index: 4;
+    }
+
+    .start-btn:hover {
+      background: darkred;
+      animation: shake 0.4s ease infinite;
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-3px); }
+      75% { transform: translateX(3px); }
+    }
+
+    .ticker {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: #b30000;
+      color: white;
+      font-weight: bold;
+      padding: 0.5rem;
+      font-family: 'Special Elite', monospace;
+      animation: scroll 25s linear infinite;
+      white-space: nowrap;
+      overflow: hidden;
+      z-index: 999;
+    }
+
+    @keyframes scroll {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    .blood-splash {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      width: 80px;
+      opacity: 0.8;
+      z-index: 10;
+    }
